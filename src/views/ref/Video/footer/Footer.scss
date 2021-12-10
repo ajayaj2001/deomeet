@@ -1,0 +1,24 @@
+.footer {
+  &_button {
+    &-center {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 0.9rem;
+      margin-right: 1.3rem;
+      &-off {
+        background-color: #1a8783 !important;
+        border: none !important;
+      }
+      &-on {
+        background-color: #2d3237 !important;
+        border: none !important;
+      }
+      &-end {
+        width: 3.5rem;
+        height: 3.5rem;
+        border-radius: 0.9rem;
+        margin-right: 1.3rem;
+      }
+    }
+  }
+}
