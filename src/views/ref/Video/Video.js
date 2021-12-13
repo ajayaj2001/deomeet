@@ -23,23 +23,16 @@ const Video = () => {
     setName,
     callEnded,
     me,
-    callUser,
-    leaveCall,
-    answerCall,
-    sendMsg: sendMsgFunc,
     msgRcv,
     chat,
     setChat,
     userName,
     myVdoStatus,
-    screenShare,
     fullScreen,
     handleScreenSharing,
     userVdoStatus,
-    updateVideo,
-    myMicStatus,
+
     userMicStatus,
-    updateMic,
   } = useContext(VideoContext);
 
   const [drawerOpen, setDrawerOpen] = useState("");
@@ -74,6 +67,7 @@ const Video = () => {
         icon: <AiOutlineMessage style={{ color: "#108ee9" }} />,
       });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [msgRcv]);
 
   return (

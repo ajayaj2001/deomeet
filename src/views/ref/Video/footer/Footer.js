@@ -34,7 +34,6 @@ const Footer = ({ setDrawerOpen, drawerOpen }) => {
     screenShare,
     handleScreenSharing,
     leaveCall,
-    leaveCall1,
   } = useContext(VideoContext);
   return (
     <Row

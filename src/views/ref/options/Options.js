@@ -32,6 +32,7 @@ const Options = () => {
       setIsModalVisible(true);
       setOtherUser(call.from);
     } else setIsModalVisible(false);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [call.isReceivingCall]);
 
   return (

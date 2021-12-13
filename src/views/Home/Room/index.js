@@ -29,7 +29,7 @@ class Room extends React.PureComponent {
     this.setState({ showShadow: e.mode === "leave" });
   };
   render() {
-    return [
+    return (
       <div className="banner page-wrapper">
         <div className="page">
           <div className="logo" />
@@ -51,8 +51,8 @@ class Room extends React.PureComponent {
             </Element>
           </BannerAnim>
         </div>
-      </div>,
-    ];
+      </div>
+    );
   }
 }
 export default Room;

@@ -26,10 +26,12 @@ const MediaCheck = () => {
       }
     };
     getUserMedia();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
     if (!navigator.onLine) alert("Connect to internet!");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [navigator]);
 
   useEffect(() => {

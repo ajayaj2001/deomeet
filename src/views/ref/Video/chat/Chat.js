@@ -1,4 +1,4 @@
-import { Button, Col, Input, Row } from "antd";
+import { Col, Input } from "antd";
 import React, { useContext, useEffect, useState, useRef } from "react";
 import { FaTelegramPlane } from "react-icons/fa";
 
@@ -7,9 +7,8 @@ const { TextArea } = Input;
 const Chat = () => {
   const {
     sendMsg: sendMsgFunc,
-    msgRcv,
+
     chat,
-    setChat,
   } = useContext(VideoContext);
   const [sendMsg, setSendMsg] = useState("");
   const onSearch = (value) => {
