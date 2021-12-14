@@ -9,7 +9,7 @@ function App() {
       <VideoState>
         <Router>
           <Routes>
-            <Route path="/:Id" element={<MediaCheck />} />
+            <Route path="/:id" element={<MediaCheck />} />
             <Route path="/" element={<Home />} />
           </Routes>
         </Router>

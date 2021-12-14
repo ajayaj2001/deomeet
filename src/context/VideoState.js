@@ -26,7 +26,7 @@ const VideoState = ({ children }) => {
   const [userMicStatus, setUserMicStatus] = useState();
   const [msgRcv, setMsgRcv] = useState("");
   const [screenShare, setScreenShare] = useState(false);
-  const [userMode, setUserMode] = useState("new");
+  const [userMode, setUserMode] = useState("existing");
   const myVideo = useRef();
   const userVideo = useRef();
   const connectionRef = useRef();

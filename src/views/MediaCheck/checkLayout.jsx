@@ -9,24 +9,30 @@ import {
   message,
   Spin,
 } from "antd";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { FcEndCall } from "react-icons/fc";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { FiMicOff, FiVideoOff, FiMic, FiVideo } from "react-icons/fi";
 import { FaUserEdit, FaRegKeyboard } from "react-icons/fa";
 import { BiUserVoice } from "react-icons/bi";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import VideoContext from "../../context/VideoContext";
 
 const CheckLayout = ({ videoRef, videoOption, setVideoOption }) => {
-  const { name, setName, userMode, callUser, setJoin, join } =
+  const { id } = useParams();
+  const { name, setName, userMode, callUser, setJoin, join, me } =
     useContext(VideoContext);
   const [code, setCode] = useState("");
   const [callWaiting, setCallWaiting] = useState(false);
 
+  useEffect(() => {
+    if (id !== "existingRoom" && id !== me) {
+      setCode(id);
+    }
+  }, []);
+
   const joinMeet = () => {
     if (userMode === "existing") {
-      console.log(name, code);
       if (name.length > 0 && code.length > 5) {
         setCallWaiting(true);
         callUser(code);

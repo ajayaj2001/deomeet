@@ -21,7 +21,22 @@ const Info = ({ me, name, setName }) => {
           }}
           className={classes.inputgroup}
         />
-
+        <div className={classes.share_options}>
+          <CopyToClipboard text={window.location.href}>
+            <Button
+              type="primary"
+              shape="round"
+              block
+              className="option_btn"
+              icon={<CopyOutlined />}
+              tabIndex="0"
+              onClick={() => message.success("URL copied successfully!")}
+            >
+              Copy URL
+            </Button>
+          </CopyToClipboard>
+        </div>
+        <br />
         <div className={classes.share_options}>
           <CopyToClipboard text={me}>
             <Button

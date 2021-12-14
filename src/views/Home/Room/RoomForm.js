@@ -8,10 +8,10 @@ const RoomForm = () => {
     <Row justify="center" align="middle" style={{ height: "100%" }}>
       <Col xs={10} style={{ textAlign: "center" }}>
         <Col style={{ marginBottom: "4rem" }}>
-          <h1>Create / Edit Room</h1>
+          <h1>Create / Join Room</h1>
         </Col>
         <Col xs={24} style={{ marginBottom: "1rem" }}>
-          <Link to={`/${me}`}>
+          <Link to={`/existingRoom`}>
             <Button
               type="primary"
               shape="round"

@@ -2,6 +2,7 @@ import React from "react";
 import { enquireScreen } from "enquire-js";
 import "../static/style";
 import BannerAnim from "rc-banner-anim";
+import logo from "../../../images/logo2.png";
 
 import RoomForm from "./RoomForm";
 const { Element } = BannerAnim;
@@ -32,7 +33,9 @@ class Room extends React.PureComponent {
     return (
       <div className="banner page-wrapper">
         <div className="page">
-          <div className="logo" />
+          <div className="logo">
+            <img src={logo} alt="logo" width="100%" height="100%" />
+          </div>
           <BannerAnim style={{ position: "relative" }}>
             <Element style={{ height: "100%" }}>
               <BgElement
