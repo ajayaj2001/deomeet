@@ -29,6 +29,7 @@ const CheckLayout = ({ videoRef, videoOption, setVideoOption }) => {
     if (id !== "existingRoom" && id !== me) {
       setCode(id);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const joinMeet = () => {

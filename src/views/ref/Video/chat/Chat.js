@@ -30,7 +30,10 @@ const Chat = () => {
           the call end
         </div>
         {chat.map((msg) => (
-          <div className={msg.type === "sent" ? "msg_sent" : "msg_rcv"}>
+          <div
+            className={msg.type === "sent" ? "msg_sent" : "msg_rcv"}
+            key={msg.msg}
+          >
             {msg.msg}
           </div>
         ))}
