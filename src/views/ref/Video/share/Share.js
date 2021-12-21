@@ -18,67 +18,85 @@ import {
 } from "react-share";
 
 const Share = ({ code }) => {
+  const description = `Join this meeting with the given code "${code}"\n ( or ) join with the below link quickly \n`;
   return (
     <div>
       <Row>
         <Col xs={24}>
           <WhatsappShareButton
             className="sbutton sbutton_whatsapp"
-            title={`Join this meeting with the given code "${code}"\n`}
-            separator="Link: "
-            url={"https://ajayaj.tech/#"}
+            title={description}
+            separator="Link : "
+            url={window.location.href}
           >
-            <RiWhatsappLine size={15} /> Whatsapp
+            <RiWhatsappLine size={15} />
+            &ensp; Whatsapp
           </WhatsappShareButton>
         </Col>
         <Col xs={24}>
           <FacebookShareButton
             className="sbutton sbutton_facebook"
-            url={"https://ajayaj.tech/#"}
-            quote={`Join this meeting with the given code "${code}"\n `}
+            url={window.location.href}
+            quote={description}
           >
-            <FaFacebookF /> Facebook
+            <FaFacebookF />
+            &ensp; Facebook
           </FacebookShareButton>
         </Col>
         <Col xs={24}>
           <LinkedinShareButton
             className="sbutton sbutton_linkedin"
-            url={"https://ajayaj.tech/#"}
+            url={window.location.href}
             title="AJ-MEET"
-            summary={`Join this meeting with the given code "${code}"\n`}
+            summary={description}
           >
-            <FaLinkedinIn /> Linkedin
+            <FaLinkedinIn />
+            &ensp; Linkedin
           </LinkedinShareButton>
         </Col>
         <Col xs={24}>
           <TwitterShareButton
             className="sbutton sbutton_twitter"
-            url={"https://ajayaj.tech/#"}
+            url={window.location.href}
             hashtags={["joinmeet", "ajmeet"]}
-            title={`Join this meeting with the given code "${code}"\n`}
+            title={description}
           >
-            <FaTwitter /> Twitter
+            <FaTwitter />
+            &ensp; Twitter
           </TwitterShareButton>
         </Col>
         <Col xs={24}>
           <EmailShareButton
             className="sbutton sbutton_mail"
-            url={"https://ajayaj.tech/#"}
+            url={window.location.href}
             subject="AJ-MEET "
             separator="Link: "
-            body={`Join this meeting with the given code "${code}"\n`}
+            body={description}
           >
-            <MdEmail /> Email
+            <MdEmail />
+            &ensp; Email
           </EmailShareButton>
         </Col>
         <Col xs={24}>
           <TelegramShareButton
             className="sbutton sbutton_telegram"
-            url={"https://ajayaj.tech/#"}
-            title={`Join this meeting with the given code "${code}"\n`}
+            url={window.location.href}
+            title={description}
           >
-            <FaTelegramPlane /> Telegram
+            <FaTelegramPlane />
+            &ensp; Telegram
           </TelegramShareButton>
+        </Col>
+        <Col xs={24}>
+          <CopyToClipboard text={window.location.href}>
+            <Button
+              className="sbutton sbutton_copy"
+              onClick={() => message.success("Code copied successfully!")}
+            >
+              <MdFileCopy />
+              &ensp; Copy URL
+            </Button>
+          </CopyToClipboard>
         </Col>
         <Col xs={24}>
           <CopyToClipboard text={code}>
@@ -86,7 +104,7 @@ const Share = ({ code }) => {
               className="sbutton sbutton_copy"
               onClick={() => message.success("Code copied successfully!")}
             >
-              <MdFileCopy /> Copy code
+              <MdFileCopy /> &ensp; Copy code
             </Button>
           </CopyToClipboard>
         </Col>

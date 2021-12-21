@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 
 const Timer = () => {
   const [time, setTime] = useState("");
+  let counter = 0;
 
   function refreshClock() {
     let date = new Date();
@@ -10,7 +11,10 @@ const Timer = () => {
     let period = "AM";
     if (hrs === 0) {
       hrs = 12;
-    } else if (hrs >= 12) {
+    } else if (hrs === 12) {
+      hrs = 12;
+      period = "PM";
+    } else if (hrs > 12) {
       hrs = hrs - 12;
       period = "PM";
     }
@@ -19,6 +23,8 @@ const Timer = () => {
 
     let time = `${hrs}:${mins} ${period}`;
     setTime(time);
+    counter = counter++;
+    // console.log(counter++ / 60);
   }
   useEffect(() => {
     const timerId = setInterval(refreshClock, 1000);
@@ -27,7 +33,7 @@ const Timer = () => {
     };
   }, []);
 
-  return <div>{`${time}  |  AJ-Meet`} </div>;
+  return <div>{`${time}  | Timer : ${counter} Mins`} </div>;
 };
 
 export default Timer;

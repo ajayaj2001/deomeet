@@ -1,12 +1,8 @@
 import { Button, Col, Row, Tooltip } from "antd";
 import Timer from "../../../Timer";
 import "./Footer.scss";
-import {
-  BsInfoCircle,
-  BsInfoCircleFill,
-  BsChatRightDots,
-  BsChatRightDotsFill,
-} from "react-icons/bs";
+import { BsInfoCircle, BsInfoCircleFill } from "react-icons/bs";
+import { AiOutlineMessage, AiFillMessage } from "react-icons/ai";
 import {
   MdOutlineScreenShare,
   MdOutlineStopScreenShare,
@@ -19,7 +15,7 @@ import {
   FiMic,
   FiSettings,
 } from "react-icons/fi";
-import { FaRegShareSquare, FaShareSquare } from "react-icons/fa";
+import { RiUserSharedFill, RiUserSharedLine } from "react-icons/ri";
 import VideoContext from "../../../../context/VideoContext";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
@@ -40,7 +36,7 @@ const Footer = ({ setDrawerOpen, drawerOpen }) => {
       justify="space-between"
       align="middle"
       style={{
-        borderTop: "#15e8d8 2px solid",
+        borderTop: "#51C4D3 2px solid",
         color: "white",
         minHeight: "100%",
         padding: "0px 2.5rem 0px 2.5rem",
@@ -130,7 +126,9 @@ const Footer = ({ setDrawerOpen, drawerOpen }) => {
           <Button
             shape="circle"
             type="text"
-            onClick={() => setDrawerOpen("info")}
+            onClick={() =>
+              drawerOpen === "info" ? setDrawerOpen("") : setDrawerOpen("info")
+            }
             style={{ color: "white", marginRight: "1.3rem" }}
             icon={
               drawerOpen === "info" ? (
@@ -145,13 +143,15 @@ const Footer = ({ setDrawerOpen, drawerOpen }) => {
           <Button
             shape="circle"
             type="text"
-            onClick={() => setDrawerOpen("chat")}
+            onClick={() =>
+              drawerOpen === "chat" ? setDrawerOpen("") : setDrawerOpen("chat")
+            }
             style={{ color: "white", marginRight: "1.3rem" }}
             icon={
               drawerOpen === "chat" ? (
-                <BsChatRightDotsFill size={23} />
+                <AiFillMessage size={23} />
               ) : (
-                <BsChatRightDots size={23} />
+                <AiOutlineMessage size={23} />
               )
             }
           />
@@ -160,13 +160,17 @@ const Footer = ({ setDrawerOpen, drawerOpen }) => {
           <Button
             shape="circle"
             type="text"
-            onClick={() => setDrawerOpen("share")}
+            onClick={() =>
+              drawerOpen === "share"
+                ? setDrawerOpen("")
+                : setDrawerOpen("share")
+            }
             style={{ color: "white" }}
             icon={
               drawerOpen === "share" ? (
-                <FaShareSquare size={23} />
+                <RiUserSharedFill size={23} />
               ) : (
-                <FaRegShareSquare size={23} />
+                <RiUserSharedLine size={23} />
               )
             }
           />

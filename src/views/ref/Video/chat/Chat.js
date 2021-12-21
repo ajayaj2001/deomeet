@@ -17,6 +17,13 @@ const Chat = () => {
   };
 
   const dummy = useRef();
+  const messageHandler = (e) => {
+    if (e.key === "Enter" && !e.ctrlKey) {
+      onSearch(sendMsg);
+    } else if (e.key === "Enter") {
+      setSendMsg(sendMsg + "\n");
+    }
+  };
 
   useEffect(() => {
     if (dummy?.current) dummy.current.scrollIntoView({ behavior: "smooth" });
@@ -29,11 +36,8 @@ const Chat = () => {
           Message can be seen only by people in the call and are deleted when
           the call end
         </div>
-        {chat.map((msg) => (
-          <div
-            className={msg.type === "sent" ? "msg_sent" : "msg_rcv"}
-            key={msg.msg}
-          >
+        {chat.map((msg, i) => (
+          <div className={msg.type === "sent" ? "msg_sent" : "msg_rcv"} key={i}>
             {msg.msg}
           </div>
         ))}
@@ -47,7 +51,7 @@ const Chat = () => {
           placeholder="Message..!"
           autoSize={{ minRows: 3, maxRows: 3 }}
           onKeyDown={(e) => {
-            if (e.key === "Enter" && e.ctrlKey) onSearch(sendMsg);
+            messageHandler(e);
           }}
         />
         <FaTelegramPlane

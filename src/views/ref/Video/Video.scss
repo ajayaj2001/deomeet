@@ -222,8 +222,8 @@
 }
 
 .ant-drawer-header {
-  background-color: #1f262e;
-  border-bottom: #16cdc0 1px solid;
+  background-color: #1f272f;
+  border-bottom: #51c4d3 1px solid;
 }
 .ant-drawer-close {
   color: white;
@@ -231,11 +231,6 @@
     color: #16cdc0;
   }
 }
-
-// .ant-drawer-body {
-//   background-color: #1f272f;
-//   color: white !important;
-// }
 
 .video_name {
   position: absolute;
@@ -344,5 +339,7 @@
   &_copy {
     background-color: #0088cc !important;
     border: none;
+    text-align: center;
+    height: 2.2rem !important;
   }
 }

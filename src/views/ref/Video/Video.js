@@ -21,6 +21,7 @@ const Video = () => {
     stream,
     name,
     setName,
+    myMicStatus,
     callEnded,
     me,
     msgRcv,
@@ -31,7 +32,6 @@ const Video = () => {
     fullScreen,
     handleScreenSharing,
     userVdoStatus,
-
     userMicStatus,
   } = useContext(VideoContext);
 
@@ -46,9 +46,6 @@ const Video = () => {
     setChat([...chat, msg]);
   });
 
-  // const showModal = (showVal) => {
-  //   setIsModalVisible(showVal);
-  // };
   const handleDrawerContent = () => {
     if (drawerOpen === "info") {
       return <Info me={me} name={name} setName={setName} />;
@@ -73,7 +70,15 @@ const Video = () => {
   return (
     <Row
       justify="space-between"
-      style={{ height: "100vh", backgroundColor: "#161b21" }}
+      style={{
+        height: "100vh",
+        backgroundColor: "#161b21",
+        // backgroundImage:
+        //   "url('https://images.pexels.com/photos/1591447/pexels-photo-1591447.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')",
+        // backgroundRepeat: "no-repeat",
+        // backgroundAttachment: "fixed",
+        // backgroundSize: "cover",
+      }} //132C33
     >
       <Col xs={24}>
         <div style={{ height: "10vh" }}></div>
@@ -89,7 +94,7 @@ const Video = () => {
               <div className="video-avatar-container">
                 <video
                   playsInline
-                  muted
+                  muted={!myMicStatus}
                   onClick={fullScreen}
                   ref={myVideo}
                   autoPlay
@@ -162,6 +167,7 @@ const Video = () => {
 
               <div className="video-avatar-container">
                 <video
+                  muted={!userMicStatus}
                   playsInline
                   ref={userVideo}
                   onClick={fullScreen}
