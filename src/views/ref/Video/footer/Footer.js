@@ -28,7 +28,7 @@ const Footer = ({ setDrawerOpen, drawerOpen }) => {
     myVdoStatus,
     myMicStatus,
     screenShare,
-    handleScreenSharing,
+    //handleScreenSharing,
     leaveCall,
   } = useContext(VideoContext);
   return (
@@ -95,8 +95,9 @@ const Footer = ({ setDrawerOpen, drawerOpen }) => {
           <Button
             shape="circle"
             type="primary"
+            style={{ cursor: "not-allowed" }}
             danger
-            onClick={() => handleScreenSharing()}
+            // onClick={() => handleScreenSharing()}
             className={`footer_button-center ${
               screenShare
                 ? "footer_button-center-on"
