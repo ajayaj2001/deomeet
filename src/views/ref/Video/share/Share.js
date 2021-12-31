@@ -47,7 +47,7 @@ const Share = ({ code }) => {
           <LinkedinShareButton
             className="sbutton sbutton_linkedin"
             url={window.location.href}
-            title="AJ-MEET"
+            title="DUO-Meet"
             summary={description}
           >
             <FaLinkedinIn />
@@ -69,7 +69,7 @@ const Share = ({ code }) => {
           <EmailShareButton
             className="sbutton sbutton_mail"
             url={window.location.href}
-            subject="AJ-MEET "
+            subject="DUO-Meet"
             separator="Link: "
             body={description}
           >

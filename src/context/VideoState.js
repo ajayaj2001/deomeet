@@ -5,7 +5,7 @@ import Peer from "simple-peer";
 import { message } from "antd";
 
 const URL = "https://deo-meet.herokuapp.com/";
-// const SERVER_URL = "http://localhost:5000/";
+// const LOCAL_SERVER_URL = "http://localhost:5000/";
 
 export const socket = io(URL);
 
